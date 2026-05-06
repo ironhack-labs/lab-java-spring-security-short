@@ -2,6 +2,174 @@
 
 # LAB Java | Spring Security
 
+Note: this workspace contains a minimal Spring Boot implementation for the lab using MySQL as the database. See the "Run instructions" section below for setup steps.
+
+## Quick Postman Test Guide
+
+Use this guide to test the app in Postman without guessing the routes or auth.
+
+### 1. Start the app
+
+Make sure MySQL is running and the database exists:
+
+```sql
+CREATE DATABASE securitylab;
+```
+
+Then run the app:
+
+```powershell
+mvn spring-boot:run
+```
+
+### 2. Auth setup
+
+Admin credentials used by the app:
+
+- Username: `root`
+- Password: `admin`
+
+In Postman, open the **Authorization** tab and choose **Basic Auth**.
+
+### 3. Public GET routes
+
+These endpoints do not need auth:
+
+- `GET http://localhost:8080/api/authors`
+- `GET http://localhost:8080/api/authors/{id}`
+- `GET http://localhost:8080/api/posts`
+- `GET http://localhost:8080/api/posts/{id}`
+
+Example:
+
+```text
+GET http://localhost:8080/api/posts
+```
+
+Expected result: `200 OK`
+
+### 4. Protected admin routes
+
+These routes require Basic Auth with `root` / `admin`:
+
+- `POST http://localhost:8080/api/authors`
+- `PUT http://localhost:8080/api/authors/{id}`
+- `DELETE http://localhost:8080/api/authors/{id}`
+- `POST http://localhost:8080/api/posts`
+- `PUT http://localhost:8080/api/posts/{id}`
+- `DELETE http://localhost:8080/api/posts/{id}`
+
+### 5. Example requests
+
+#### Create author
+
+Method: `POST`
+
+URL:
+
+```text
+http://localhost:8080/api/authors
+```
+
+Body type: `raw` -> `JSON`
+
+```json
+{
+  "name": "Aylin Demir"
+}
+```
+
+Expected result: `201 Created`
+
+#### Update author
+
+Method: `PUT`
+
+URL:
+
+```text
+http://localhost:8080/api/authors/1
+```
+
+Body:
+
+```json
+{
+  "name": "Aiko Tanaka Updated"
+}
+```
+
+Expected result: `200 OK`
+
+#### Create post
+
+Method: `POST`
+
+URL:
+
+```text
+http://localhost:8080/api/posts
+```
+
+Body:
+
+```json
+{
+  "authorId": 1,
+  "title": "My New Blog Post",
+  "post": "This is the body of the blog post."
+}
+```
+
+Expected result: `201 Created`
+
+#### Update post
+
+Method: `PUT`
+
+URL:
+
+```text
+http://localhost:8080/api/posts/1
+```
+
+Body:
+
+```json
+{
+  "authorId": 2,
+  "title": "Updated Title",
+  "post": "Updated content."
+}
+```
+
+Expected result: `200 OK`
+
+### 6. Delete requests
+
+Use the same admin auth and send:
+
+- `DELETE http://localhost:8080/api/authors/{id}`
+- `DELETE http://localhost:8080/api/posts/{id}`
+
+Expected result: `204 No Content`
+
+### 7. If you get an error
+
+- `401 Unauthorized`: auth is missing or wrong.
+- `403 Forbidden`: you are logged in but not as the admin user.
+- `500 Internal Server Error`: check MySQL, database name, or credentials in `src/main/resources/application.properties`.
+
+### 8. MySQL config used by this project
+
+The app is currently configured with:
+
+- Database: `securitylab`
+- Username: `root`
+- Password: `admin`
+
+If your MySQL setup is different, update `src/main/resources/application.properties` before testing.
+
 ## Introduction
 
 We have just learned how to use Spring Security to add authentication and authorization to the application so let's practice a bit more.
