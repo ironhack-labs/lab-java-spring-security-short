@@ -1,0 +1,8 @@
+com/ironhack/labSpringSecurity/security/SecurityConfig.class
+com/ironhack/labSpringSecurity/model/BlogPost.class
+com/ironhack/labSpringSecurity/model/Author.class
+com/ironhack/labSpringSecurity/repository/BlogPostRepository.class
+com/ironhack/labSpringSecurity/controller/BlogPostController.class
+com/ironhack/labSpringSecurity/repository/AuthorRepository.class
+com/ironhack/labSpringSecurity/controller/AuthorController.class
+com/ironhack/labSpringSecurity/data/DataLoader.class
