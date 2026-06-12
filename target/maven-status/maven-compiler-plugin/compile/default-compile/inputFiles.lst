@@ -1,0 +1,9 @@
+/home/manu/Bootcamp_Ironhack/Java_Projects/Java_Labs/lab-java-spring-security-short/src/main/java/com/ironhack/labSpringSecurity/LabSpringSecurityApplication.java
+/home/manu/Bootcamp_Ironhack/Java_Projects/Java_Labs/lab-java-spring-security-short/src/main/java/com/ironhack/labSpringSecurity/controller/AuthorController.java
+/home/manu/Bootcamp_Ironhack/Java_Projects/Java_Labs/lab-java-spring-security-short/src/main/java/com/ironhack/labSpringSecurity/controller/BlogPostController.java
+/home/manu/Bootcamp_Ironhack/Java_Projects/Java_Labs/lab-java-spring-security-short/src/main/java/com/ironhack/labSpringSecurity/data/DataLoader.java
+/home/manu/Bootcamp_Ironhack/Java_Projects/Java_Labs/lab-java-spring-security-short/src/main/java/com/ironhack/labSpringSecurity/model/Author.java
+/home/manu/Bootcamp_Ironhack/Java_Projects/Java_Labs/lab-java-spring-security-short/src/main/java/com/ironhack/labSpringSecurity/model/BlogPost.java
+/home/manu/Bootcamp_Ironhack/Java_Projects/Java_Labs/lab-java-spring-security-short/src/main/java/com/ironhack/labSpringSecurity/repository/AuthorRepository.java
+/home/manu/Bootcamp_Ironhack/Java_Projects/Java_Labs/lab-java-spring-security-short/src/main/java/com/ironhack/labSpringSecurity/repository/BlogPostRepository.java
+/home/manu/Bootcamp_Ironhack/Java_Projects/Java_Labs/lab-java-spring-security-short/src/main/java/com/ironhack/labSpringSecurity/security/SecurityConfig.java
